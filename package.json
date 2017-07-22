@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/node": "^8.0.15",
+    "dgram": "^1.0.1",
+    "typescript": "next"
+  }
+}
