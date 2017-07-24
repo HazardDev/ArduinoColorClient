@@ -10,9 +10,11 @@ export class UDPClient {
 	constructor(ipAddress: string, port: number) {
 		this.port = port;
 		this.ipAddress = ipAddress;
+		this.send();
 	}
 
 	public send = function (): any {
+		if (this.messageQueue.length === 0) return;
 		this.client.send(this.messageQueue.shift(), this.port, this.ipAddress, (err: Error, bytes: number) => {
 			if (err) console.log(err);	
 			setTimeout(this.send(), packetTimeout);
