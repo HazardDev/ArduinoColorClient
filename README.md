@@ -1,0 +1,1 @@
+You'll have to copy /src/config.json to wherever you want your config. If anyone has any suggestions on how to package this up, be my guest.
