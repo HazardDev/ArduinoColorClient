@@ -14,7 +14,6 @@ export class SolidPattern implements IPattern {
 
 		for (let i = 0; i < patterns.lights; i++) {
 			toBuild.push(this.color);
-
 		}
 
 		return toBuild;
