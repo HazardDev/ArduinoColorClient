@@ -5,7 +5,6 @@ const config = require('./config.json').general;
 
 const client = new UDPClient(config.ipAddress, config.port);
 
-
 import { SolidPattern, SolidBluePattern, SolidGreenPattern, SolidRedPattern } from "./patterns/solid_colors";
 
 client.queue(new SolidBluePattern().getString());

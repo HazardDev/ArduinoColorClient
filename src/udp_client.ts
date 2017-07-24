@@ -5,7 +5,7 @@ export class UDPClient {
 	private client: dgram.Socket = dgram.createSocket('udp4');
 	private port: number;
 	private ipAddress: string;
-	private messageQueue: Array<string>;
+	private messageQueue: Array<string> = [];
 
 	constructor(ipAddress: string, port: number) {
 		this.port = port;
@@ -17,6 +17,7 @@ export class UDPClient {
 		if (this.messageQueue.length === 0) return;
 		this.client.send(this.messageQueue.shift(), this.port, this.ipAddress, (err: Error, bytes: number) => {
 			if (err) console.log(err);	
+			console.log("Sent Data");
 			setTimeout(this.send(), packetTimeout);
 		});
 	}
