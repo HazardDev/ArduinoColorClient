@@ -2,7 +2,7 @@ import { Color } from "../color";
 const patterns = require("../config").patterns;
 import { IPattern } from "./patterns.interface";
 
-export class Solid implements IPattern {
+export class SolidPattern implements IPattern {
 	color: Color;
 
 	constructor(color?: Color, red?: number, green?: number, blue?: number) {
@@ -29,18 +29,18 @@ export class Solid implements IPattern {
 
 }
 
-export class SolidRed extends Solid { 
+export class SolidRedPattern extends SolidPattern { 
 	constructor() {
 		super(new Color(255, 0, 0));
 	}
 }
 
-export class SolidGreen extends Solid {
+export class SolidGreenPattern extends SolidPattern {
 	constructor() {
 		super(new Color(0, 255, 0));
 	}
 }
-export class SolidBlue extends Solid {
+export class SolidBluePattern extends SolidPattern {
 	constructor() {
 		super(new Color(0, 0, 255));
 	}
