@@ -23,7 +23,6 @@ export class Pixel {
 			data: this.color.toJson()
 		}
 	}
-
 	public getString(): string {
 		return JSON.stringify(this.toJson());
 	}

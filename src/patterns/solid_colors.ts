@@ -5,6 +5,7 @@ import { IPattern } from "./patterns.interface";
 
 export class SolidPattern implements IPattern {
 	color: Color;
+	pixels: Pixel[] = [];
 
 	constructor(color?: Color, red?: number, green?: number, blue?: number) {
 		this.color = color ? color : new Color(red, green, blue);
@@ -12,18 +13,22 @@ export class SolidPattern implements IPattern {
 
 	build(): Pixel[] {
 		let toBuild: Pixel[] = [];
-
 		for (let i = 0; i < patterns.lights; i++) {
 			toBuild.push(new Pixel(this.color, i));
 		}
-
+		this.pixels = toBuild;
 		return toBuild;
 	}
 
 	getString(): string {
-		return "[" + this.build().map((pixel: Pixel) => {
+		if (!this.pixels) this.build();
+		return "[" + this.pixels.map((pixel: Pixel) => {
 			return pixel.getString();
 		}).join(',') + "]";
+	}
+
+	getPixels(): Pixel[] {
+		return this.pixels ? this.pixels : this.build();
 	}
 }
 

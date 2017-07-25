@@ -3,7 +3,6 @@ export class Color {
 	private red: number;
 	private green: number;
 	private blue: number;
-	private index?: number;
 
 	constructor(red: number, green: number, blue: number) {
 		this.red = red;
