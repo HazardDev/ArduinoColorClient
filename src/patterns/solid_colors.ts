@@ -1,3 +1,4 @@
+import { Pixel } from "../pixel";
 import { Color } from "../color";
 const patterns = require("../config").patterns;
 import { IPattern } from "./patterns.interface";
@@ -9,23 +10,21 @@ export class SolidPattern implements IPattern {
 		this.color = color ? color : new Color(red, green, blue);
 	}
 
-	build(): Color[] {
-		let toBuild: Color[] = [];
+	build(): Pixel[] {
+		let toBuild: Pixel[] = [];
 
 		for (let i = 0; i < patterns.lights; i++) {
-			toBuild.push(this.color);
+			toBuild.push(new Pixel(this.color, i));
 		}
 
 		return toBuild;
 	}
 
 	getString(): string {
-		return "[" + this.build().map((index: Color) => {
-			return index.toJsonString();
+		return "[" + this.build().map((pixel: Pixel) => {
+			return pixel.getString();
 		}).join(',') + "]";
 	}
-
-
 }
 
 export class SolidRedPattern extends SolidPattern { 

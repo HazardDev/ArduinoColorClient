@@ -15,13 +15,14 @@ export class UDPClient {
 
 	public send = function (): any {
 		if (this.messageQueue.length !== 0) {
-			this.client.send(this.messageQueue.shift(), this.port, this.ipAddress, (err: Error, bytes: number) => {
+			this.client.send(this.messageQueue[0], this.port, this.ipAddress, (err: Error, bytes: number) => {
 				if (err) console.log(err);
-				console.log("Sent Data");
+				console.log(this.messageQueue.shift());
 				setTimeout(() => { this.send() }, packetTimeout);
 			});
-		} 
-		setTimeout(() => { this.send() }, packetTimeout);
+		} else {
+			setTimeout(() => { this.send() }, packetTimeout);
+		}
 		
 	}
 

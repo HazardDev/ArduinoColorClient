@@ -1,6 +1,6 @@
-import { Color } from "../color";
+import { Pixel } from "../pixel";
 
 export interface IPattern {
-	build(): Color[]
+	build(): Pixel[]
 	getString(): string
 }
