@@ -18,10 +18,9 @@ export class Pixel {
 	}
 
 	public toJson(): Object {
-		return {
-			index: this.index,
-			data: this.color.toJson()
-		}
+		var colorJson = this.color.toJson();
+		colorJson.i = this.index;
+		return colorJson;
 	}
 	public getString(): string {
 		return JSON.stringify(this.toJson());

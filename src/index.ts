@@ -7,7 +7,9 @@ const client = new UDPClient(config.ipAddress, config.port);
 
 import { SolidPattern, SolidBluePattern, SolidGreenPattern, SolidRedPattern } from "./patterns/solid_colors";
 
-client.queue(new SolidBluePattern().getPixels());
-client.queue(new SolidGreenPattern().getPixels());
-client.queue(new SolidRedPattern().getPixels());
-client.queue(new SolidPattern(new Color(255, 255, 255)).getPixels());
+//client.queue(new SolidBluePattern().getPixels());
+const pixelList = new SolidBluePattern().getPixels();
+client.queue(pixelList);
+// client.queue(new SolidGreenPattern().getPixels());
+//client.queue(new SolidRedPattern().getPixels());
+// client.queue(new SolidPattern(new Color(255, 255, 255)).getPixels());

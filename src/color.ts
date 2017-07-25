@@ -16,9 +16,9 @@ export class Color {
 
 	public toJson(): Object {
 		return {
-			red: this.red,
-			green: this.green,
-			blue: this.blue
+			r: this.red,
+			g: this.green,
+			b: this.blue
 		}
 	}
 

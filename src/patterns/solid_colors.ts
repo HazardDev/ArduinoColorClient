@@ -9,6 +9,7 @@ export class SolidPattern implements IPattern {
 
 	constructor(color?: Color, red?: number, green?: number, blue?: number) {
 		this.color = color ? color : new Color(red, green, blue);
+		this.build();
 	}
 
 	build(): Pixel[] {
@@ -28,7 +29,8 @@ export class SolidPattern implements IPattern {
 	}
 
 	getPixels(): Pixel[] {
-		return this.pixels ? this.pixels : this.build();
+		if (!this.pixels) this.build();
+		return this.pixels;
 	}
 }
 
