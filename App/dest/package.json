@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dgram-as-promised": "^0.1.2"
+  }
+}
