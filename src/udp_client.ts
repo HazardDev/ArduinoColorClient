@@ -28,21 +28,6 @@ export class UDPClient {
 		}
 
 		setTimeout(() => { this.send() }, packetTimeout);
-
-
-
-		// return new Promise((resolve, reject) => {
-		// 	if (this.messageQueue.length !== 0) reject("No messages in Queue");
-
-		// 	for (let i: number = 0; i < sending.length; i++) {
-		// 		return new Promise((resolve, reject) => {
-		// 			this.client.send(sending[i].getString(), this.port, this.ipAddress, (err: Error, bytes: number) => {
-		// 				if (err) console.log(err);
-		// 				console.log(sending[i].getString());
-		// 			});
-		// 		})
-		// 	}
-		// })
 	}
 
 	public queue(message: Pixel[]): void {
