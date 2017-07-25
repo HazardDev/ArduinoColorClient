@@ -10,7 +10,7 @@ const uint8_t PixelPin = 3;
 NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
 
 
-#include <SPI.h>         // needed for Arduino versions later than 0018
+// #include <SPI.h>         // needed for Arduino versions later than 0018
 #include <Ethernet.h>
 #include <EthernetUdp.h>         // UDP library from: bjoern@cs.stanford.edu 12/30/2008
 
@@ -24,7 +24,7 @@ IPAddress ip(192, 168, 1, 177);
 unsigned int localPort = 1337;      // local port to listen on
 char packetBuffer[48];
 EthernetUDP Udp;
-
+ 
 char ReplyBuffer[] = "ack";
 
 void setup() {
