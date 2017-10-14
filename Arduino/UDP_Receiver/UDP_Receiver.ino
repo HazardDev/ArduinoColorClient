@@ -4,7 +4,7 @@
 #include <ArduinoJson.h>
 
 
-const uint16_t PixelCount = 120; 
+const uint16_t PixelCount = 119; 
 const uint8_t PixelPin = 3;  
 
 NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
@@ -24,7 +24,7 @@ IPAddress ip(192, 168, 1, 177);
 unsigned int localPort = 1337;      // local port to listen on
 char packetBuffer[48];
 EthernetUDP Udp;
- 
+
 char ReplyBuffer[] = "ack";
 
 void setup() {
@@ -46,7 +46,7 @@ void loop() {
   int packetSize = Udp.parsePacket();
   if (packetSize) {
     Udp.read(packetBuffer, packetSize);
-//    Serial.println(packetBuffer);
+  // Serial.println(packetBuffer);
     color(packetBuffer);
 
     // send a reply to the IP address and port that sent us the packet we received
@@ -56,13 +56,10 @@ void loop() {
   }
 }
 
-void color(char packetBuffer[]){
+void color(char* packetBuffer){
   DynamicJsonBuffer jsonBuffer;
   JsonObject& object = jsonBuffer.parseObject(packetBuffer);
-//  object.printTo(Serial);
   strip.SetPixelColor(object["i"], RgbColor(object["r"], object["g"], object["b"]));
-//  Serial.print("Free mem:");
-//  Serial.println(freeMemory());
   strip.Show();
 }
 
