@@ -1,0 +1,10 @@
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/bin/Debug/netcoreapp2.0/CSharpApp.deps.json
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/bin/Debug/netcoreapp2.0/CSharpApp.runtimeconfig.json
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/bin/Debug/netcoreapp2.0/CSharpApp.runtimeconfig.dev.json
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/bin/Debug/netcoreapp2.0/CSharpApp.dll
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/bin/Debug/netcoreapp2.0/CSharpApp.pdb
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/obj/Debug/netcoreapp2.0/CSharpApp.csproj.CoreCompileInputs.cache
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/obj/Debug/netcoreapp2.0/CSharpApp.AssemblyInfoInputs.cache
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/obj/Debug/netcoreapp2.0/CSharpApp.AssemblyInfo.cs
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/obj/Debug/netcoreapp2.0/CSharpApp.dll
+/Users/logansaso/Development/ArduinoColorClient/CSharpApp/obj/Debug/netcoreapp2.0/CSharpApp.pdb
